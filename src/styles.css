@@ -11,6 +11,7 @@ nav {
 
 .nav-link {
     cursor: pointer;
+    position:relative
 }
 
 h3 {
@@ -66,4 +67,106 @@ div > ul > li:hover {
 
 .dropdown {
     cursor: pointer;
+    position: absolute;
+    z-index: 100000;
+}
+
+/* carousel section */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#wide-div {
+    display: flex;
+}
+
+#frame-div {
+    display: flex;
+    max-width: 960px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 2rem;
+    margin: 1rem 0;
+}
+
+.move-slide-btn {
+    cursor: pointer;
+}
+
+#prev-slide-btn {
+    position: relative;
+    left: 4rem;
+    z-index: 10000;
+}
+
+#next-slide-btn {
+    position: relative;
+    left: -3rem;
+    z-index: 10000;
+}
+
+.first-slide {
+    left: 0px;
+    z-index: 1000;
+}
+
+.second-slide {
+    left: -960px;
+    z-index: 1000;
+}
+
+.third-slide {
+    left: calc(-960px * 2);
+    z-index: 1000;
+}
+
+.fourth-slide {
+    left: calc(-960px * 3);
+    z-index: 1000;
+}
+
+.fifth-slide {
+    left: calc(-960px * 4);
+    z-index: 1000;
+}
+
+.dot {
+    position: absolute;
+    top: 38rem;
+    height: 1.1rem;
+    width: 1.1rem;
+    background-color: white;
+    z-index: 10000;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.pale {
+    background-color: lightgray;
+    width: .9rem;
+    height: .9rem;
+}
+
+#first-dot {
+    left: calc(1040px / 2 - 4rem);
+}
+
+#second-dot {
+    left: calc(1040px / 2 - 2rem);
+}
+
+#third-dot {
+    left: calc(1040px / 2);
+}
+
+#fourth-dot {
+    left: calc(1040px / 2 + 2rem);
+}
+
+#fifth-dot {
+    left: calc(1040px / 2 + 4rem);
 }
