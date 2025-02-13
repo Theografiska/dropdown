@@ -98,6 +98,14 @@ main {
 
 .move-slide-btn {
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.move-slide-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Change background on hover */
 }
 
 #prev-slide-btn {
@@ -111,6 +119,10 @@ main {
     left: -3rem;
     z-index: 10000;
 }
+
+.slide {
+/*     transition: 200ms opacity ease-in-out;
+ */}
 
 .first-slide {
     left: 0px;
@@ -152,6 +164,10 @@ main {
     background-color: lightgray;
     width: .9rem;
     height: .9rem;
+}
+
+.pale:hover {
+    background-color: rgb(232, 229, 229);
 }
 
 #first-dot {

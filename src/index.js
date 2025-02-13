@@ -174,9 +174,4 @@ const slideAdvancer = () => {
     console.log(currentSlide);
 }
 
-const autoAdvancer = () => {
-    
-}
-
-dotsHighlighter();
 setInterval(slideAdvancer, 5000);
