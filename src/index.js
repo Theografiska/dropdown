@@ -42,6 +42,7 @@ allNavLinks.forEach((link) => {
 const prevSlideBtn = document.querySelector("#prev-slide-btn");
 const nextSlideBtn = document.querySelector("#next-slide-btn");
 
+const allSlides = document.querySelectorAll(".slide");
 const firstSlide = document.querySelector("#first-slide");
 const secondSlide = document.querySelector("#second-slide");
 const thirdSlide = document.querySelector("#third-slide");
@@ -70,104 +71,70 @@ nextSlideBtn.addEventListener("click", () => {
 
 allDots.forEach((dot) => {
     dot.addEventListener("click", () => {
+        firstSlide.className = "slide hidden";
+        secondSlide.className = "slide hidden";
+        thirdSlide.className = "slide hidden";
+        fourthSlide.className = "slide hidden";
+        fifthSlide.className = "slide hidden";
         if (dot.id === "first-dot") {
             currentSlide = 1;
-            firstSlide.className = "first-slide";
-            secondSlide.className = "hidden";
-            thirdSlide.className = "hidden";
-            fourthSlide.className = "hidden";
-            fifthSlide.className = "hidden";
+            firstSlide.className = "slide first-slide";
             dotsHighlighter();
         } else if (dot.id === "second-dot") {
             currentSlide = 2;
-            firstSlide.className = "hidden";
-            secondSlide.className = "second-slide";
-            thirdSlide.className = "hidden";
-            fourthSlide.className = "hidden";
-            fifthSlide.className = "hidden";
+            secondSlide.className = "slide second-slide";
             dotsHighlighter();
         } else if (dot.id === "third-dot") {
             currentSlide = 3;
-            firstSlide.className = "hidden";
-            secondSlide.className = "hidden";
-            thirdSlide.className = "third-slide";
-            fourthSlide.className = "hidden";
-            fifthSlide.className = "hidden";
+            thirdSlide.className = "slide third-slide";
             dotsHighlighter();
         } else if (dot.id === "fourth-dot") {
             currentSlide = 4;
-            firstSlide.className = "hidden";
-            secondSlide.className = "hidden";
-            thirdSlide.className = "hidden";
-            fourthSlide.className = "fourth-slide";
-            fifthSlide.className = "hidden";
+            fourthSlide.className = "slide fourth-slide";
             dotsHighlighter();
         } else if (dot.id === "fifth-dot") {
             currentSlide = 5;
-            firstSlide.className = "hidden";
-            secondSlide.className = "hidden";
-            thirdSlide.className = "hidden";
-            fourthSlide.className = "hidden";
-            fifthSlide.className = "fifth-slide";
+            fifthSlide.className = "slide fifth-slide";
             dotsHighlighter();
         }
     })
 })
 
 const dotsHighlighter = () => {
+    firstDot.className = "dot pale";
+    secondDot.className = "dot pale";
+    thirdDot.className = "dot pale";
+    fourthDot.className = "dot pale";
+    fifthDot.className = "dot pale";
     // highlight the current slide
     if (currentSlide === 1) {
         firstDot.className = "dot";
-        console.log("highlight first dot");
-        secondDot.className = "dot pale";
-        thirdDot.className = "dot pale";
-        fourthDot.className = "dot pale";
-        fifthDot.className = "dot pale";
     } else if (currentSlide === 2) {
-        firstDot.className = "dot pale";
         secondDot.className = "dot";
-        thirdDot.className = "dot pale";
-        fourthDot.className = "dot pale";
-        fifthDot.className = "dot pale";
     } else if (currentSlide === 3) {
-        firstDot.className = "dot pale";
-        secondDot.className = "dot pale";
         thirdDot.className = "dot";
-        fourthDot.className = "dot pale";
-        fifthDot.className = "dot pale";
     } else if (currentSlide === 4) {
-        firstDot.className = "dot pale";
-        secondDot.className = "dot pale";
-        thirdDot.className = "dot pale";
         fourthDot.className = "dot";
-        fifthDot.className = "dot pale";
     } else if (currentSlide === 5) {
-        firstDot.className = "dot pale";
-        secondDot.className = "dot pale";
-        thirdDot.className = "dot pale";
-        fourthDot.className = "dot pale";
         fifthDot.className = "dot";
     }
 }
-
-dotsHighlighter();
-
 const slideReceder = () => {
     if (currentSlide === 1) {
-        firstSlide.className = "hidden";
-        fifthSlide.className = "second-slide";
+        firstSlide.className = "slide hidden";
+        fifthSlide.className = "slide second-slide";
     } else if (currentSlide === 5) {
-        fifthSlide.className = "hidden";
-        fourthSlide.className = "third-slide";
+        fifthSlide.className = "slide hidden";
+        fourthSlide.className = "slide third-slide";
     } else if (currentSlide === 4) {
-        fourthSlide.className = "hidden";
-        thirdSlide.className = "fourth-slide";
+        fourthSlide.className = "slide hidden";
+        thirdSlide.className = "slide fourth-slide";
     } else if (currentSlide === 3) {
-        thirdSlide.className = "hidden";
-        secondSlide.className = "fifth-slide";
+        thirdSlide.className = "slide hidden";
+        secondSlide.className = "slide fifth-slide";
     } else if (currentSlide === 2) {
-        secondSlide.className = "hidden";
-        firstSlide.className = "first-slide";
+        secondSlide.className = "slide hidden";
+        firstSlide.className = "slide first-slide";
     }
 
     if (currentSlide <= 5 && currentSlide > 1) {
@@ -203,5 +170,13 @@ const slideAdvancer = () => {
         currentSlide = 1;
     }
 
+    dotsHighlighter();
     console.log(currentSlide);
 }
+
+const autoAdvancer = () => {
+    
+}
+
+dotsHighlighter();
+setInterval(slideAdvancer, 5000);

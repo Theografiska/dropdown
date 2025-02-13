@@ -77,7 +77,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
     position: relative;
+    max-width: 960px;
 }
 
 #wide-div {
@@ -86,6 +88,7 @@ main {
 
 #frame-div {
     display: flex;
+    min-width: 960px;
     max-width: 960px;
     overflow: hidden;
     position: relative;
@@ -152,21 +155,21 @@ main {
 }
 
 #first-dot {
-    left: calc(1040px / 2 - 4rem);
+    left: calc(960px / 2 - 4rem);
 }
 
 #second-dot {
-    left: calc(1040px / 2 - 2rem);
+    left: calc(960px / 2 - 2rem);
 }
 
 #third-dot {
-    left: calc(1040px / 2);
+    left: calc(960px / 2);
 }
 
 #fourth-dot {
-    left: calc(1040px / 2 + 2rem);
+    left: calc(960px / 2 + 2rem);
 }
 
 #fifth-dot {
-    left: calc(1040px / 2 + 4rem);
+    left: calc(960px / 2 + 4rem);
 }
